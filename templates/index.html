@@ -1,0 +1,31 @@
+<img src = "{{ url_for('static',filename='sapat.jpg')}}">
+
+<p>Time : <b>{{time}}</b></p>
+<h1> Hi this is  <b>SAPAT's</b> Task Management system</h1>
+
+{% if user.username %}
+<p>Hii <b> {{user.username}}</b>,</p>
+<p>This is your email : ,{{user.email}}</p>
+{% else %}
+<p>Your user name is nor available</p>
+{% endif %}
+
+
+
+<p> This is your task </p>
+<ul>
+    {% for t in task %}
+        <li>{{t}}</li>
+    {% endfor %}
+</ul>
+
+
+{% macro render_task(task) %}
+    <li>{{task}}</li>
+{% endmacro %} 
+
+
+
+
+
+
